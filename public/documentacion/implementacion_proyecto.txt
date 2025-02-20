@@ -1,0 +1,192 @@
+
+# Implementación del Proyecto
+
+Este documento detalla los pasos para la implementación de un sitio estático utilizando Next.js 14 y Tailwind CSS.
+
+## Prerequisitos
+
+1. Node.js y npm instalados en tu sistema.
+2. Un editor de texto como VS Code.
+3. Acceso a un servidor web para alojar el sitio.
+
+## Paso 1: Crear el Proyecto
+
+1. Inicializa un nuevo proyecto de Next.js:
+
+```bash
+npx create-next-app@latest my-static-site
+```
+
+2. Navega al directorio del proyecto:
+
+```bash
+cd my-static-site
+```
+
+3. Instala Tailwind CSS:
+
+```bash
+npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+npx tailwindcss init -p
+```
+
+4. Configura Tailwind CSS agregando lo siguiente en `tailwind.config.js`:
+
+```javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+5. Configura Tailwind CSS en `styles/globals.css`:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+## Paso 2: Estructura de Carpetas
+
+Organiza las carpetas del proyecto siguiendo esta estructura:
+
+```
+src/
+├── app/
+│   ├── layout.js
+│   ├── page.js
+│   ├── acerca-de/
+│   │   └── page.js
+│   ├── servicios/
+│   │   ├── page.js
+│   │   ├── campañas-express/
+│   │   │   └── page.js
+│   │   ├── creacion-post/
+│   │   │   └── page.js
+│   │   ├── logotipos/
+│   │   │   └── page.js
+│   │   ├── manejo-redes-sociales/
+│   │   │   └── page.js
+│   │   ├── manejo-tiktok/
+│   │   │   └── page.js
+│   │   ├── manual-marca/
+│   │   │   └── page.js
+│   │   ├── paginas-web/
+│   │   │   └── page.js
+│   │   ├── stickers-personalizados/
+│   │   │   └── page.js
+│   │   ├── tarjeta-digital/
+│   │   │   └── page.js
+│   ├── contacto/
+│   │   └── page.js
+│   ├── cursos/
+│   │   ├── page.js
+│   │   ├── cursos-en-vivo/
+│   │   │   └── page.js
+│   │   ├── cursos-grabados/
+│   │   │   └── page.js
+│   ├── legal/
+│   │   ├── politicas-de-cookies/
+│   │   │   └── page.js
+│   │   ├── politicas-de-privacidad/
+│   │   │   └── page.js
+│   │   ├── terminos-de-uso/
+│   │   │   └── page.js
+│   ├── not-found.js
+├── components/
+│   ├── navbar/
+│   │   └── Navbar.jsx
+│   ├── footer/
+│   │   └── Footer.jsx
+│   ├── Introduction/
+│   │   └── Introduction.jsx
+│   ├── beneficts/
+│   │   └── Beneficts.jsx
+│   ├── cta/
+│   │   └── Cta.jsx
+```
+
+## Paso 3: Configuración de Next.js
+
+Configura Next.js para la exportación estática.
+
+### next.config.js
+
+Agrega la siguiente configuración en `next.config.js`:
+
+```javascript
+const path = require('path');
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  trailingSlash: true,
+  output: 'export',
+  webpack: (config) => {
+    config.resolve.alias['@'] = path.resolve(__dirname, 'src');
+    return config;
+  },
+};
+
+module.exports = nextConfig;
+```
+
+### next-sitemap.config.js
+
+Agrega la siguiente configuración en `next-sitemap.config.js`:
+
+```javascript
+/** @type {import('next-sitemap').IConfig} */
+const config = {
+  siteUrl: 'https://subdominio.tudominio.com', // Reemplaza con tu subdominio real
+  generateRobotsTxt: true, // Genera un archivo robots.txt
+};
+
+module.exports = config;
+```
+
+### jsconfig.json
+
+Agrega la siguiente configuración en `jsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src"]
+}
+```
+
+## Paso 4: Construir y Exportar el Sitio
+
+1. Ejecuta el comando para construir el proyecto:
+
+```bash
+npm run build
+```
+
+2. La carpeta `out` se generará automáticamente. Sube el contenido de esta carpeta a tu servidor.
+
+## Paso 5: Probar el Sitio
+
+Abre tu navegador y accede a tu subdominio para probar el sitio. Navega por las diferentes rutas para asegurarte de que todo funcione correctamente.
+
+## Mantenimiento y Reutilización
+
+- Utiliza este proyecto como plantilla para futuros proyectos.
+- Actualiza y adapta los archivos de configuración según sea necesario.
+- Crea un repositorio en GitHub para gestionar versiones y colaborar de manera eficiente.
+
+¡Felicidades! Ahora tienes un sitio estático configurado y listo para ser utilizado y reutilizado.
