@@ -17,7 +17,7 @@ const VideoPlayer = ({
 }) => {
   return (
     <motion.div
-      className={`flex flex-col items-center justify-center py-spacing-3 ${componentBgColor} gap-spacing-2 sm:gap-spacing-3`}
+      className={`flex flex-col items-center justify-center  py-spacing-3 ${componentBgColor} gap-spacing-2 sm:gap-spacing-3`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
     >

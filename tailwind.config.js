@@ -33,8 +33,8 @@ module.exports = {
         'footer': '#2E1036',
       },
       fontFamily: {
-        'primary': ['Ballpoint', 'sans-serif'],
-        'secondary': ['Ballpoint', 'sans-serif'],
+        'primary': ['Calibri', 'sans-serif'],
+        'secondary': ['Calibri', 'sans-serif'],
       },
       fontSize: {
         'size-0': '0.75rem',

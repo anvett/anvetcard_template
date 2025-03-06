@@ -50,7 +50,7 @@ const ContactButtons = ({
   };
 
   return (
-    <div className={`flex flex-wrap justify-center gap-4 mx-4 mb-4 p-4 ${componentBgColor}`}>
+    <div className={`flex flex-wrap justify-center gap-4 mx-4  p-1 ${componentBgColor}`}>
       {contacts.map((contact, index) => (
         <motion.button
           key={contact.type}

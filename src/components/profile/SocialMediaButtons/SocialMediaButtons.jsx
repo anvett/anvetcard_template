@@ -31,7 +31,7 @@ const SocialMediaButtons = ({
     : {};
 
   return (
-    <div className={`flex ${layout === "row" ? "flex-wrap justify-center" : "flex-col items-center"} ${gap} p-4 pb-spacing-2 ${componentBgColor}`}>
+    <div className={`flex ${layout === "row" ? "flex-wrap justify-center" : "flex-col items-center"} ${gap} p-2 pb-spacing-2 ${componentBgColor}`}>
       {socialLinks.map((link, index) => (
         <motion.a
           key={link.type}

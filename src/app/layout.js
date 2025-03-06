@@ -95,7 +95,7 @@ export default function RootLayout({ children }) {
           borderColor="border-secondary"
           footerLinks={footerLinks}
           linkTextSize="text-size-1"
-          copyrightText="© 2024 Anvetcorp. Todos los derechos reservados."
+          copyrightText="© 2025 Anvetcorp. Todos los derechos reservados."
           copyrightColor="text-light"
           copyrightSize="text-size-2"
           footerLogo="/assets/images/logo.jpg"

@@ -12,8 +12,6 @@ import QRDisplay from "@/components/cardContent/QRDisplay/QRDisplay";
 import VideoPlayer from "@/components/cardContent/VideoPlayer/VideoPlayer";
 import CallToAction from "@/components/cardContent/cta/cta";
 
-
-
 //------------------------------------------------------------
 // Profile data
 //------------------------------------------------------------
@@ -180,7 +178,7 @@ const banksData = [
       { label: "Titular", value: "Lic. María Emilia Arias" },
       { label: "Número de Cuenta", value: "2207721022" },
       { label: "Tipo de Cuenta", value: "Ahorros" },
-      { label: "No. Identificación", value: "1122554477" },
+      { label: "No. Identificación", value: "1728127885" },
     ],
   },
 ];
@@ -298,7 +296,7 @@ export default function CamilaCard() {
           animate={true}
         />
       </div>
-      <div id="services">
+      <div id="services ">
         <GalleryWithModal
           componentTitle="Mis Servicios" // Contenido del título general
           componentTitleColor="text-dark" // Color del título general
@@ -309,7 +307,7 @@ export default function CamilaCard() {
           modalBgColor="bg-primary" // Fondo del modal
           titleTextColor="text-dark" // Color del título en la galería
           modalTitleTextColor="text-dark" // Color del título en el modal
-          titleSize="text-size-1 sm:text-size-2" // Tamaño del título en la galería
+          titleSize="text-size-2 sm:text-size-2" // Tamaño del título en la galería
           modalTitleSize="text-2xl sm:text-3xl" // Tamaño del título en el modal
           descriptionTextColor="text-dark" // Color del texto de la descripción
           descriptionTextSize="text-md sm:text-lg" // Tamaño del texto de la descripción
@@ -325,18 +323,20 @@ export default function CamilaCard() {
           modalButtonHoverColor="hover:bg-light hover:text-dark" // Color al hacer hover en el botón
         />
       </div>
-      <VideoPlayer
-        componentTitle="Conoce más sobre mis servicios"
-        titleColor="text-dark"
-        titleSize="text-3xl sm:text-4xl"
-        titleFontWeight="font-semibold"
-        componentBgColor="bg-transparent"
-        videoUrl="/assets/videos/acompanamiento_psicologico.mp4"
-        borderColor="border border-none"
-        borderRadius="rounded-xl"
-        shadow="shadow-xl"
-        aspectRatio="9:16"
-      />
+      <div className="w-100% bg-gray-100">
+        <VideoPlayer
+          componentTitle="Conoce más sobre mis servicios"
+          titleColor="text-dark"
+          titleSize="text-3xl sm:text-4xl"
+          titleFontWeight="font-semibold"
+          componentBgColor="bg-light"
+          videoUrl="/assets/videos/acompanamiento_psicologico.mp4"
+          borderColor="border border-none"
+          borderRadius="rounded-xl"
+          shadow="shadow-xl"
+          aspectRatio="9:16"
+        />
+      </div>
       <CallToAction
         ctaTitle="Únete a Nuestro Equipo"
         titleColor="text-dark"
@@ -386,7 +386,7 @@ export default function CamilaCard() {
           componentTitleSize="text-3xl sm:text-4xl"
           componentBgColor="Transparent"
           layout="row" // "row" para horizontal, "column" para vertical
-          iconSize={80} // Tamaño de los íconos
+          iconSize={110} // Tamaño de los íconos
           borderColor="border border-light" // Color del borde de los íconos
           modalBgColor="bg-primary" // Fondo del modal
           modalTextColor="text-dark" // Color del texto en el modal
@@ -431,7 +431,6 @@ export default function CamilaCard() {
         buttonBorderColor="border border-light"
         buttonHoverColor="hover:bg-dark hover:text-white"
       />
-      
     </main>
   );
 }

@@ -54,7 +54,7 @@ const BankInfo = ({
   };
 
   return (
-    <div className={`w-full container mx-auto p-4 py-spacing-6 ${componentBgColor}`}>
+    <div className={`w-full container mx-auto p-4 py-spacing-3 ${componentBgColor}`}>
       {/* ✅ Título General del Componente */}
       <h2 className={`text-center font-bold mb-spacing-2 ${componentTitleColor} ${componentTitleSize}`}>
         {componentTitle}

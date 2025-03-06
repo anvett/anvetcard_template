@@ -45,8 +45,8 @@ const EducationExperience = ({
   };
 
   return (
-    <div className={`container mx-auto p-4 ${componentBgColor} ${gap} py-spacing-6`}>
-      <h2 className={`text-center font-primary font-bold mb-spacing-4  ${componentTitleColor} ${componentTitleSize}`}>
+    <div className={`container mx-auto p-4 ${componentBgColor} ${gap} py-spacing-3`}>
+      <h2 className={`text-center font-primary font-bold mb-spacing-2  ${componentTitleColor} ${componentTitleSize}`}>
         {componentTitle}
       </h2>
       {entries.map((entry, index) => (

@@ -17,7 +17,7 @@ const QRDisplay = ({
   gap = "gap-4", // Espaciado entre elementos
 }) => {
   return (
-    <div className={`flex flex-col items-center justify-center p-spacing-6 ${componentBgColor} ${gap}`}>
+    <div className={`flex flex-col items-center justify-center p-spacing-3 ${componentBgColor} ${gap}`}>
       {/* ✅ Título General del Componente */}
       <h2 className={`text-center ${titleColor} ${titleSize} ${titleFontWeight} mb--spacing-4`}>
         {componentTitle}

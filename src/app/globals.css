@@ -157,6 +157,10 @@
   @apply text-primary text-size-5 font-bold text-center py-3;
 }
 
+.item-title {
+  @apply text-primary text-size-5 font-bold text-center py-3;
+}
+
 .modal-body {
   @apply text-primary text-size-3 font-secondary py-2;
 }

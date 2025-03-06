@@ -33,24 +33,24 @@ const ProfileCard = ({
   };
 
   return (
-    <div className={`flex justify-center p-5 w-full ${bgColor} ${borderColor} border rounded-lg`}>
+    <div className={`flex justify-center p-1 w-full ${bgColor} ${borderColor} border rounded-lg`}>
       <div className="card w-full max-w-sm shadow-xl text-center sm:max-w-md lg:max-w-lg xl:max-w-xl">
         {/* Imagen del perfil con animación */}
-        <figure className="px-10 pt-10 bg-transparent">
+        <figure className="px-10 pt-spacing-1 sm:pt-spacing-3 bg-transparent">
           <motion.div initial="hidden" animate="visible" variants={imageZoomIn}>
             <Image
               src={profile.image}
               alt="Profile picture"
               width={300}
               height={300}
-              className="rounded-full mb-spacing-2"
+              className="rounded-full "
             />
           </motion.div>
         </figure>
 
         {/* Información del perfil con animación */}
         <div className={`card-body bg-transparent ${textColor}`}>
-          <motion.h2 initial="hidden" animate="visible" variants={fadeInUp} className={`${nameSize} font-bold font-primary`}>
+          <motion.h2 initial="hidden" animate="visible" variants={fadeInUp} className={`${nameSize} font-bold  font-primary italic`}>
             {profile.name}
           </motion.h2>
           <motion.h4 initial="hidden" animate="visible" variants={fadeInUp} className={`${titleSize} font-semibold `}>
@@ -66,14 +66,14 @@ const ProfileCard = ({
             whileTap={{ scale: 0.95 }}
             className="card-actions justify-center mt-4"
           >
-            <a
+            {/* <a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
               className={`${buttonType} ${buttonBgColor} ${buttonTextColor} ${buttonTextSize}`.trim()}
             >
               Conectar
-            </a>
+            </a> */}
             <a
               href="/assets/vcards/contact.vcf"
               download="contact.vcf"

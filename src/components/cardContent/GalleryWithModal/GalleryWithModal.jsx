@@ -60,18 +60,18 @@ const GalleryWithModal = ({
 
   return (
 
-    <div className={`w-full container mx-auto p-4 py-spacing-6 ${componentBgColor}`}>
+    <div className={`w-full container mx-auto p-4 py-spacing-3 ${componentBgColor}`}>
       {/* ✅ Título General del Componente */}
       <h2 className={`text-center font-bold mb-spacing-2 ${componentTitleColor} ${componentTitleSize}`}>
         {componentTitle}
       </h2>
       <h4 className="text-center text-size-1 sm:text-size-2 text-dark font-semibold pb-spacing-3" >Haz clic en las imágenes para obtener más información </h4>
       
-      <div className="flex flex-wrap justify-center gap-spacing-4">
+      <div className="flex flex-wrap justify-center gap-spacing-1 sm:gap-spacing-5">
         {items.map((item, index) => (
           <motion.div
             key={index}
-            className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 cursor-pointer ${galleryItemBgColor} shadow-lg rounded-lg`}
+            className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 mb-spacing-3 cursor-pointer ${galleryItemBgColor} shadow-lg rounded-lg`}
             onClick={() => openModal(item)}
             custom={index}
             initial="hidden"
@@ -86,7 +86,7 @@ const GalleryWithModal = ({
               height={300}
               className="object-cover w-full h-full rounded-lg"
             />
-            <h3 className={`${titleSize} ${titleTextColor} text-center font-semibold mt-2`}>
+            <h3 className={`${titleSize} ${titleTextColor} text-center font-semibold mt-3`}>
               {item.title}
             </h3>
           </motion.div>
